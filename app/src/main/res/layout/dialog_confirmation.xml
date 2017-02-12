@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="180dp"
+    tools:context="com.example.hii.doctorconnect.MainActivity"
+    android:background="#009688"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="30dp">
+
+    <EditText android:id="@+id/editText_ConfirmationCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:textColor="#ffffff"
+        android:hint="Enter Confirmation Code"
+        android:inputType="text"
+        android:textColorHint="#ffffff"
+        android:gravity="center"
+        android:background="@drawable/button_boarder"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/button_login"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_boarder"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:textSize="18dp"/>
+</LinearLayout>

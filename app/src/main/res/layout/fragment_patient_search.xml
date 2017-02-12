@@ -1,0 +1,121 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hii.doctorconnect.Patient.PatientSearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/textView2"
+            android:text="Search:"
+            android:textSize="20sp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/album_title" />
+
+        <!--<RadioGroup-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/radioGroup"-->
+            <!--android:paddingLeft="5dp">-->
+
+            <!--<RadioButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Doctor"-->
+                <!--android:id="@+id/radioButton_doctor"-->
+                <!--android:checked="false"-->
+                <!--android:textSize="15dp"-->
+                <!--android:textColor="@color/album_title"/>-->
+
+            <!--<RadioButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Hospital"-->
+                <!--android:id="@+id/radioButton_hospital"-->
+                <!--android:checked="true"-->
+                <!--android:textSize="15dp"-->
+                <!--android:textColor="@color/album_title"/>-->
+        <!--</RadioGroup>-->
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/options1_spinner"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/options_spinner"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp" />
+
+        <EditText android:id="@+id/editText_Search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+           android:textColor="@color/album_title"
+            android:inputType="text"
+            android:hint="Enter Query"
+            android:textColorHint="@color/album_title"
+            android:background="@drawable/customborder"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search >"
+            android:id="@+id/button_find"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            android:background="#56B59C"
+            android:textStyle="italic|bold"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_vertical"
+            android:textSize="18dp"/>
+
+        <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Back"-->
+            <!--android:id="@+id/button_back"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:background="#56B59C"-->
+            <!--android:textStyle="italic|bold"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:textSize="18dp"/>-->
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Home"
+            android:checked="false"
+            android:title="@string/navigation_item_1"
+            android:icon="@drawable/icon_reminder"/>
+        <item
+            android:id="@+id/Profile"
+            android:checked="false"
+            android:title="@string/navigation_item_2"
+            android:icon="@drawable/icon_reminder"/>
+        <item
+            android:id="@+id/Appointment"
+            android:checked="false"
+            android:title="@string/navigation_item_3"
+            android:icon="@drawable/icon_reminder"/>
+        <item
+            android:id="@+id/Search"
+            android:checked="false"
+            android:title="@string/navigation_item_4"
+            android:icon="@drawable/icon_reminder"/>
+        <item
+            android:id="@+id/Favourite"
+            android:checked="false"
+            android:title="@string/navigation_item_5"
+            android:icon="@drawable/icon_reminder"/>
+        <item
+            android:id="@+id/Diagnose"
+            android:checked="false"
+            android:title="@string/navigation_item_6"
+            android:icon="@drawable/icon_reminder"/>
+        <item
+            android:id="@+id/Schedule"
+            android:checked="false"
+            android:title="@string/navigation_item_7"
+            android:icon="@drawable/icon_reminder"/>
+
+        <item
+            android:id="@+id/signOut"
+            android:checked="false"
+            android:title="@string/signOut_string"
+            android:icon="@drawable/sign_out"/>
+
+    </group>
+</menu>

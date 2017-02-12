@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="240dp"
+    tools:context="com.example.hii.doctorconnect.MainActivity"
+    android:background="#009688"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up as a Doctor"
+        android:id="@+id/button_doctor"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_boarder"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:textSize="18dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up as a Patient"
+        android:id="@+id/button_patient"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_boarder"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:textSize="18dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/button_cancel"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_boarder"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:textSize="18dp"/>
+</LinearLayout>
