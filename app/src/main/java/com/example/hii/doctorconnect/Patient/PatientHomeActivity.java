@@ -1,11 +1,11 @@
 package com.example.hii.doctorconnect.Patient;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hii.doctorconnect.AppPreferences;
+import com.example.hii.doctorconnect.Doctor.DoctorFavouriteFragment;
 import com.example.hii.doctorconnect.MainActivity;
 import com.example.hii.doctorconnect.R;
 
@@ -23,17 +25,17 @@ public class PatientHomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-  //  private AppPreferences appPrefs;
+    private AppPreferences appPrefs;
     TextView nameTextView,emailTextView;
     ImageView imageView;
-    private String userID,imageFile;
+    private String userID,imageFile,userType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_home);
-       // appPrefs = new AppPreferences(getApplicationContext());
-       // userID = appPrefs.getUserID();
-
+        appPrefs = new AppPreferences(getApplicationContext());
+        userID = appPrefs.getUserID();
+        userType=appPrefs.getUserType();
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 
@@ -49,7 +51,7 @@ public class PatientHomeActivity extends AppCompatActivity {
         nameTextView= (TextView) headerView.findViewById(R.id.username);
         emailTextView=(TextView) headerView.findViewById(R.id.email);
         imageView= (ImageView) headerView.findViewById(R.id.profile_image);
-      //  loadHeaderData();
+        loadHeaderData();
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
@@ -96,7 +98,7 @@ public class PatientHomeActivity extends AppCompatActivity {
                     case R.id.Favourite:
                         Toast.makeText(getApplicationContext(),"Favourite Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientFavouriteFragment()).commit();
+                                .replace(R.id.frame,new DoctorFavouriteFragment()).commit();
                         return true;
                     case R.id.Diagnose:
                         Toast.makeText(getApplicationContext(),"Diagnose Selected",Toast.LENGTH_SHORT).show();
@@ -109,7 +111,7 @@ public class PatientHomeActivity extends AppCompatActivity {
                                 .replace(R.id.frame,new PatientScheduleFragment()).commit();
                         return true;
                     case R.id.signOut:
-                       // appPrefs.signOutUser();
+                        appPrefs.signOutUser();
                         Toast.makeText(getApplicationContext(),"User SignOut",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(PatientHomeActivity.this,MainActivity.class);
                         startActivity(intent);
@@ -151,6 +153,8 @@ public class PatientHomeActivity extends AppCompatActivity {
 
     }
     public void loadHeaderData(){
+        emailTextView.setText(userID);
+        nameTextView.setText(userType);
     }
 
     @Override

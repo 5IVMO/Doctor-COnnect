@@ -1,13 +1,204 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context="com.example.hii.doctorconnect.Patient.PatientProfileFragment">
+    android:layout_width="match_parent"
+    android:theme="@style/AppTheme.ColorAccent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello patient profile fragment" />
+        android:background="#FFFFFF"
+        >
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="30dp"
+            android:layout_below="@+id/linear"
+            android:gravity="center_horizontal"
+            android:id="@+id/relative_body">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@drawable/profile"
+                app:border_color="#FF000000"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"/>
+
+            <EditText android:id="@+id/editText_firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="First Name" />
+
+            <EditText android:id="@+id/editText_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Last Name" />
+
+            <EditText android:id="@+id/editText_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Email" />
+
+            <EditText android:id="@+id/editText_DOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Date of Birth" />
+
+            <EditText android:id="@+id/editText_NIC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="NIC No." />
+
+            <EditText android:id="@+id/editText_Phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Phone No"
+                android:inputType="number" />
+
+            <EditText android:id="@+id/editText_City"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="City" />
+
+            <EditText android:id="@+id/editText_Country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Country" />
+
+            <EditText android:id="@+id/editText_PassWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="PassWord"
+                android:inputType="textPassword" />
+
+            <EditText android:id="@+id/editText_blood_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Blood Group" />
+
+            <EditText android:id="@+id/editText_disease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:hint="Disease"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relative_body"
+            android:layout_marginTop="20dp"
+            android:id="@+id/relative_body2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/add_disease"
+                android:autoLink="all"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:id="@+id/add_disease"
+                />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/relative_body2"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:padding="15dp"
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Save"
+                android:id="@+id/save"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_margin="10dp"
+                android:background="#56B59C"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:textStyle="italic|bold"
+                android:textSize="12dp"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Cancel"
+                android:id="@+id/cancel"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_margin="10dp"
+                android:background="#56B59C"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:textStyle="italic|bold"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</ScrollView>

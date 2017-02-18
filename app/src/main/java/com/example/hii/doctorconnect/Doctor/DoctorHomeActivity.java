@@ -14,9 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hii.doctorconnect.AppPreferences;
 import com.example.hii.doctorconnect.MainActivity;
-import com.example.hii.doctorconnect.Patient.PatientHomeFragment;
-import com.example.hii.doctorconnect.Patient.PatientProfileFragment;
+import com.example.hii.doctorconnect.Patient.PatientFavouriteFragment;
 import com.example.hii.doctorconnect.R;
 
 public class DoctorHomeActivity extends AppCompatActivity {
@@ -25,16 +25,17 @@ public class DoctorHomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    //  private AppPreferences appPrefs;
+    private AppPreferences appPrefs;
     TextView nameTextView,emailTextView;
     ImageView imageView;
-    private String userID,imageFile;
+    private String userID,imageFile,userType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_home);
-        // appPrefs = new AppPreferences(getApplicationContext());
-        // userID = appPrefs.getUserID();
+        appPrefs = new AppPreferences(getApplicationContext());
+        userID = appPrefs.getUserID();
+        userType=appPrefs.getUserType();
 
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
@@ -51,7 +52,7 @@ public class DoctorHomeActivity extends AppCompatActivity {
         nameTextView= (TextView) headerView.findViewById(R.id.username);
         emailTextView=(TextView) headerView.findViewById(R.id.email);
         imageView= (ImageView) headerView.findViewById(R.id.profile_image);
-        //  loadHeaderData();
+        loadHeaderData();
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
@@ -77,35 +78,35 @@ public class DoctorHomeActivity extends AppCompatActivity {
                     case R.id.Home:
                         Toast.makeText(getApplicationContext(),"Home Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientHomeFragment()).commit();
+                                .replace(R.id.frame,new DoctorHomeFragment()).commit();
                         return true;
                     case R.id.Profile:
                         Toast.makeText(getApplicationContext(),"Profile Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientProfileFragment()).commit();
+                                .replace(R.id.frame,new DoctorProfileFragment()).commit();
                         return true;
                     case R.id.Status:
                         Toast.makeText(getApplicationContext(),"Status Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientProfileFragment()).commit();
+                                .replace(R.id.frame,new DoctorStatusFragment()).commit();
                         return true;
                     case R.id.Appointment:
                         Toast.makeText(getApplicationContext(),"Appointment Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientProfileFragment()).commit();
+                                .replace(R.id.frame,new DoctorAppointmentFragment()).commit();
                         return true;
                     case R.id.Patient:
                         Toast.makeText(getApplicationContext(),"Patient Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientProfileFragment()).commit();
+                                .replace(R.id.frame,new PatientFavouriteFragment()).commit();
                         return true;
                     case R.id.Portal:
                         Toast.makeText(getApplicationContext(),"Portal Selected",Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frame,new PatientProfileFragment()).commit();
+                                .replace(R.id.frame,new DoctroPortalFragment()).commit();
                         return true;
                     case R.id.signOut:
-                        // appPrefs.signOutUser();
+                        appPrefs.signOutUser();
                         Toast.makeText(getApplicationContext(),"User SignOut",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(DoctorHomeActivity.this,MainActivity.class);
                         startActivity(intent);
@@ -143,10 +144,12 @@ public class DoctorHomeActivity extends AppCompatActivity {
 
         getSupportFragmentManager().
                 beginTransaction().
-                add(R.id.frame, new PatientHomeFragment()).commit();
+                add(R.id.frame, new DoctorHomeFragment()).commit();
 
     }
     public void loadHeaderData(){
+        emailTextView.setText(userID);
+        nameTextView.setText(userType);
     }
 
     @Override

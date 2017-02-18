@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,7 +27,7 @@ public class PatientApprovedFavouriteFragment extends Fragment {
     private RecyclerView recyclerView;
     private DoctorAdapter adapter;
     private List<Doctor> doctorList;
-
+    FragmentManager fragmentManager;
     public PatientApprovedFavouriteFragment() {
         // Required empty public constructor
     }
@@ -37,10 +38,11 @@ public class PatientApprovedFavouriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_patient_approved_favourite, container, false);
+        fragmentManager=getFragmentManager();
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
         doctorList = new ArrayList<>();
-        adapter = new DoctorAdapter(getActivity(), doctorList,"View Full Profile","Delete");
+        adapter = new DoctorAdapter(getActivity(), doctorList,"View Full Profile","Remove",fragmentManager);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
 

@@ -7,32 +7,32 @@
             android:id="@+id/Home"
             android:checked="false"
             android:title="@string/navigation_item_1"
-            android:icon="@drawable/icon_reminder"/>
+            android:icon="@drawable/ic_home_black_24dp"/>
         <item
             android:id="@+id/Profile"
             android:checked="false"
             android:title="@string/navigation_item_2"
-            android:icon="@drawable/icon_reminder"/>
+            android:icon="@drawable/ic_account_circle_black_24dp"/>
         <item
             android:id="@+id/Status"
             android:checked="false"
             android:title="@string/navigation_item_8"
-            android:icon="@drawable/icon_reminder"/>
+            android:icon="@drawable/ic_beenhere_black_24dp"/>
         <item
             android:id="@+id/Appointment"
             android:checked="false"
             android:title="@string/navigation_item_3"
-            android:icon="@drawable/icon_reminder"/>
+            android:icon="@drawable/ic_perm_contact_calendar_black_24dp"/>
          <item
             android:id="@+id/Patient"
             android:checked="false"
             android:title="@string/navigation_item_9"
-            android:icon="@drawable/icon_reminder"/>
+            android:icon="@drawable/ic_accessible_black_24dp"/>
         <item
             android:id="@+id/Portal"
             android:checked="false"
             android:title="@string/navigation_item_10"
-            android:icon="@drawable/icon_reminder"/>
+            android:icon="@drawable/ic_group_black_24dp"/>
 
         <item
             android:id="@+id/signOut"

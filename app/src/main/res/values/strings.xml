@@ -6,6 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="add_disease"><u>Add Previous Disease</u></string>
+    <string name="add_spec"><u>Add Specialization</u></string>
+    <string name="add_hosp"><u>Add Hospital</u></string>
 
 
     <string name="navigation_item_1">Home</string>

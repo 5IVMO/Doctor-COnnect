@@ -15,16 +15,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-            <ImageView
+            <!--<ImageView-->
+                <!--android:id="@+id/thumbnail"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/album_cover_height"-->
+                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                <!--android:clickable="true"-->
+                <!--android:scaleType="fitXY" />-->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/thumbnail"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/album_cover_height"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:scaleType="fitXY" />
-
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@drawable/profile"
+                app:border_color="#FF000000"
+                android:layout_marginTop="24dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center_horizontal"/>
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
@@ -35,7 +48,8 @@
                 android:paddingTop="@dimen/album_title_padding"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title" />
+                android:textSize="@dimen/album_title"
+                android:gravity="center_horizontal"/>
 
             <TextView
                 android:id="@+id/hospital"
@@ -47,7 +61,8 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:gravity="center_horizontal"/>
 
             <TextView
                 android:id="@+id/specialization"
@@ -59,19 +74,18 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:gravity="center_horizontal"/>
 
-            <TextView
-                android:id="@+id/count"
-                android:layout_width="match_parent"
+
+            <RatingBar
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/specialization"
-                android:paddingBottom="@dimen/songs_count_padding_bottom"
-                android:paddingLeft="@dimen/album_title_padding"
-                android:paddingRight="@dimen/album_title_padding"
-                android:textStyle="italic|bold"
-                android:textColor="@color/album_title"
-                android:textSize="15dp" />
+                android:id="@+id/ratingBar"
+                android:numStars="5"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:progressTint="@color/colorPrimaryDark"
+                android:stepSize="0.5"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

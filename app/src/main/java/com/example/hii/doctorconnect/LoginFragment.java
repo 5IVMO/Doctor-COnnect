@@ -28,6 +28,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     TextView textViewSignUp;
     Dialog dialog;
     Button Doctor,Patient,Cancel;
+    AppPreferences appPreferences;
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -38,6 +39,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_login, container, false);
+        appPreferences=new AppPreferences(getActivity());
         editTextEmail= (EditText) view.findViewById(R.id.editText_Email);
         editTextUserPassWord= (EditText) view.findViewById(R.id.editText_UserPassword);
         mLogin= (Button) view.findViewById(R.id.button_login);
@@ -55,12 +57,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                 if(editTextEmail.getText().toString().equals("patient")){
                     //if Patient
+                    appPreferences.saveUserID("1");
+                    appPreferences.saveUserType(editTextEmail.getText().toString());
                     Intent intent = new Intent(getActivity(),PatientHomeActivity.class);
                     startActivity(intent);
                     getActivity().finish();
                 }
                 if(editTextEmail.getText().toString().equals("doctor")){
                     //if Doctor
+                    appPreferences.saveUserID("2");
+                    appPreferences.saveUserType(editTextEmail.getText().toString());
                     Intent intent = new Intent(getActivity(),DoctorHomeActivity.class);
                     startActivity(intent);
                     getActivity().finish();
@@ -70,7 +76,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             case R.id.signUp_text:
                 dialog = new Dialog(getContext());
                 dialog.setContentView(R.layout.dialog_signup_option);
-               // dialog.setTitle(Html.fromHtml("<font color='#008080'>Select Option</font>"));
+              //  dialog.setTitle(Html.fromHtml("<font color='#008080'>Sign Up</font>"));
                 dialog.show();
                 //Button
                 Doctor = (Button) dialog.findViewById(R.id.button_doctor);

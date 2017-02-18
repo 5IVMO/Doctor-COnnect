@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +28,7 @@ public class PatientSearchDoctorFragment extends Fragment {
     //private List<Appointment> appointmentList;
     private DoctorAdapter adapter;
     private List<Doctor> doctorList;
-
+    FragmentManager fragmentManager;
 
     public PatientSearchDoctorFragment() {
         // Required empty public constructor
@@ -40,13 +41,13 @@ public class PatientSearchDoctorFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_patient_search_doctor, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-
+        fragmentManager=getFragmentManager();
         //  albumList = new ArrayList<>();
         //  adapter = new AlbumsAdapter(getActivity(), albumList);
 
       //  appointmentList = new ArrayList<>();
         doctorList = new ArrayList<>();
-        adapter = new DoctorAdapter(getActivity(), doctorList,"View Full Profile","Add Doctor");
+        adapter = new DoctorAdapter(getActivity(), doctorList,"View Full Profile","Add Doctor",fragmentManager);
 
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());

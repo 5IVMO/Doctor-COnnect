@@ -26,7 +26,8 @@
                 android:layout_margin="5dp"
                 android:textColor="@color/album_title"
                 android:textStyle="italic|bold"
-                android:textSize="@dimen/album_title" />
+                android:textSize="@dimen/album_title"
+                android:gravity="center_horizontal"/>
 
             <TextView
                 android:id="@+id/hospital_name"
@@ -38,7 +39,8 @@
                 android:layout_margin="5dp"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title" />
+                android:textSize="@dimen/album_title"
+                android:gravity="center_horizontal"/>
 
             <TextView
                 android:id="@+id/date"
@@ -50,7 +52,8 @@
                 android:layout_margin="5dp"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title" />
+                android:textSize="@dimen/album_title"
+                android:gravity="center_horizontal"/>
             <TextView
                 android:id="@+id/time"
                 android:layout_width="match_parent"
@@ -61,7 +64,8 @@
                 android:layout_margin="5dp"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title" />
+                android:textSize="@dimen/album_title"
+                android:gravity="center_horizontal"/>
             <TextView
                 android:id="@+id/day"
                 android:layout_width="match_parent"
@@ -73,7 +77,8 @@
                 android:layout_margin="5dp"
                 android:textStyle="italic|bold"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title" />
+                android:textSize="@dimen/album_title"
+                android:gravity="center_horizontal"/>
 
             <Button
                 android:layout_width="match_parent"

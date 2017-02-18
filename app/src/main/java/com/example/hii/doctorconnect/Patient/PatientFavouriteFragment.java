@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hii.doctorconnect.Doctor.DoctorFavouriteViewPagerAdapter;
 import com.example.hii.doctorconnect.R;
 
 /**
@@ -31,7 +32,7 @@ public class PatientFavouriteFragment extends Fragment {
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
 
         String[] titles = {"Approved","Pending"};
-        PatientFavouriteViewPagerAdapter adapter = new PatientFavouriteViewPagerAdapter(getActivity().getSupportFragmentManager(),titles.length,titles);
+        DoctorFavouriteViewPagerAdapter adapter = new DoctorFavouriteViewPagerAdapter(getActivity().getSupportFragmentManager(),titles.length,titles);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         return view;
